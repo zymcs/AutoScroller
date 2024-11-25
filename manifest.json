@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "AutoScroller",
+  "description": "Auto-scroll Instagram Reels",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/reels/*"],
+      "js": ["content/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  }
+}
